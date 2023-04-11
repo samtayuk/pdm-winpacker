@@ -1,0 +1,39 @@
+[tool.pdm.dev-dependencies]
+dev = [
+    "pdm>=2.4.9",
+]
+
+[tool.pdm]
+version = {source = "scm"}
+
+[project]
+name = "pdm-winpacker"
+description = "A PDM plugin to bundle python application with python and create a installer using NSIS"
+authors = [
+    {name = "Samuel Taylor", email = "samtaylor.uk@gmail.com"},
+]
+dependencies = [
+    "pynsist>=2.8",
+    "unearth>=0.9.0",
+    "installer>=0.6.0",
+]
+requires-python = ">=3.10"
+readme = "README.md"
+license = {text = "MIT"}
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10"
+]
+dynamic = ["version"]
+
+[project.urls]
+Repository = "https://github.com/samtayuk/pdm-winpacker"
+Homepage = "https://github.com/samtayuk/pdm-winpacker"
+
+[project.entry-points.pdm]
+pdm-winpacker = "pdm_winpacker:plugin"
+
+[build-system]
+requires = ["pdm-pep517>=1.0"]
+build-backend = "pdm.pep517.api"
